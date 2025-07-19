@@ -1,0 +1,264 @@
+/* header.component.css */
+.main-header {
+  background-color: #284a78;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 12px;
+  min-height: 140px;
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+/* Cube container */
+.ice-cube {
+  position: absolute;
+  width: 30px;
+  height: 45px;
+  transform-style: preserve-3d;
+  animation: fall 8s infinite linear;
+}
+
+/* Basic cube */
+.cube-face {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg,
+    rgba(173, 216, 250, 0.3) 0%,
+    rgba(173, 216, 250, 0.6) 50%,
+    rgba(173, 216, 250, 0.3) 100%);
+  border: 1px solid rgba(173, 216, 250, 0.5);
+  box-shadow: 0 0 10px rgba(173, 216, 250, 0.4);
+  backface-visibility: visible;
+}
+
+/* Cube faces positioning */
+.cube-face.front { transform: translateZ(15px); }
+.cube-face.back { transform: translateZ(-15px) rotateY(180deg); }
+.cube-face.left { transform: rotateY(-90deg) translateZ(15px); }
+.cube-face.right { transform: rotateY(90deg) translateZ(15px); }
+.cube-face.top { transform: rotateX(90deg) translateZ(15px); }
+.cube-face.bottom { transform: rotateX(-90deg) translateZ(15px); }
+
+/* Dome container */
+.dome {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 30px;
+  height: 15px;
+  transform-style: preserve-3d;
+}
+
+/* Dome slices */
+.dome-slice {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  background: linear-gradient(to bottom,
+    rgba(173, 216, 250, 0.8) 0%,
+    rgba(173, 216, 250, 0.6) 100%);
+  border: 1px solid rgba(173, 216, 250, 0.5);
+  box-shadow: 0 0 10px rgba(173, 216, 250, 0.4);
+  border-radius: 15px 15px 0 0;
+}
+
+/* Position dome slices in a circle */
+.dome-slice:nth-child(1) { transform: rotateY(0deg); }
+.dome-slice:nth-child(2) { transform: rotateY(30deg); }
+.dome-slice:nth-child(3) { transform: rotateY(60deg); }
+.dome-slice:nth-child(4) { transform: rotateY(90deg); }
+.dome-slice:nth-child(5) { transform: rotateY(120deg); }
+.dome-slice:nth-child(6) { transform: rotateY(150deg); }
+.dome-slice:nth-child(7) { transform: rotateY(180deg); }
+.dome-slice:nth-child(8) { transform: rotateY(210deg); }
+.dome-slice:nth-child(9) { transform: rotateY(240deg); }
+.dome-slice:nth-child(10) { transform: rotateY(270deg); }
+.dome-slice:nth-child(11) { transform: rotateY(300deg); }
+.dome-slice:nth-child(12) { transform: rotateY(330deg); }
+
+/* Add shine effect */
+.cube-face::before,
+.dome-slice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+  border-radius: inherit;
+}
+
+/* Animation and positioning */
+.ice-cube:nth-child(1) { left: 10%; animation-delay: -1s; }
+.ice-cube:nth-child(2) { left: 20%; animation-delay: -3.5s; }
+.ice-cube:nth-child(3) { left: 30%; animation-delay: -2s; }
+.ice-cube:nth-child(4) { left: 40%; animation-delay: -4.5s; }
+.ice-cube:nth-child(5) { left: 50%; animation-delay: -3s; }
+.ice-cube:nth-child(6) { left: 60%; animation-delay: -5s; }
+
+.ice-cube.right-side:nth-child(7) { right: 10%; animation-delay: -2.5s; }
+.ice-cube.right-side:nth-child(8) { right: 20%; animation-delay: -1.5s; }
+.ice-cube.right-side:nth-child(9) { right: 30%; animation-delay: -3.5s; }
+.ice-cube.right-side:nth-child(10) { right: 40%; animation-delay: -0.5s; }
+.ice-cube.right-side:nth-child(11) { right: 50%; animation-delay: -4s; }
+.ice-cube.right-side:nth-child(12) { right: 60%; animation-delay: -2s; }
+.ice-cube.right-side:nth-child(13) { right: 70%; animation-delay: -3s; }
+.ice-cube.right-side:nth-child(14) { right: 80%; animation-delay: -1s; }
+
+@keyframes fall {
+  0% {
+    top: -60px;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    top: calc(100% + 60px);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+/* Header content styles */
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-box {
+  flex: 0 0 auto;
+}
+
+.logo {
+  margin-top: -10px;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.title-and-nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winter-fussion-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.main-menu {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.main-menu .navigation {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.navigation li {
+  margin-right: 20px;
+}
+
+.navigation li:last-child {
+  margin-right: 0;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navigation li a:hover {
+  color: #e0e0e0;
+}
+
+.header-actions {
+  flex: 0 0 auto;
+  display: flex;
+}
+
+.search-btn,
+.cart-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.search-btn:hover,
+.cart-btn:hover {
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-box {
+    margin-bottom: 15px;
+  }
+
+  .title-and-nav {
+    width: 100%;
+  }
+
+  .winter-fussion-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .main-menu {
+    margin-top: 15px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header-actions {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,64 @@
+<!-- header.component.html -->
+<header class="main-header">
+  <div class="header-background">
+    <!-- Cubes on the left side -->
+    <div class="ice-cube" *ngFor="let i of [1,2,3,4,5,6]">
+      <!-- Cube faces -->
+      <div class="cube-face front"></div>
+      <div class="cube-face back"></div>
+      <div class="cube-face left"></div>
+      <div class="cube-face right"></div>
+      <div class="cube-face top"></div>
+      <div class="cube-face bottom"></div>
+      <!-- Dome structure -->
+      <div class="dome">
+        <!-- Create 12 dome segments for smooth curve -->
+        <div class="dome-slice" *ngFor="let slice of [0,1,2,3,4,5,6,7,8,9,10,11]"></div>
+      </div>
+    </div>
+    <!-- Cubes on the right side -->
+    <div class="ice-cube right-side" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+      <!-- Cube faces -->
+      <div class="cube-face front"></div>
+      <div class="cube-face back"></div>
+      <div class="cube-face left"></div>
+      <div class="cube-face right"></div>
+      <div class="cube-face top"></div>
+      <div class="cube-face bottom"></div>
+      <!-- Dome structure -->
+      <div class="dome">
+        <!-- Create 12 dome segments for smooth curve -->
+        <div class="dome-slice" *ngFor="let slice of [0,1,2,3,4,5,6,7,8,9,10,11]"></div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-box">
+    <div class="logo">
+      <a href="/">
+        <img src="assets/images/logo_winter.jpeg" alt="Winter Fussion Logo" width="100" height="50">
+      </a>
+    </div>
+  </div>
+  <div class="header-content">
+   
+    <div class="title-and-nav">
+      <h1 class="winter-fussion-title">WINTER FUSSION</h1>
+      <nav class="main-menu">
+        <ul class="navigation">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/products">PRODUCTS</a></li>
+          <li><a href="/recipes">ABOUT US</a></li>
+          <li><a href="/contact">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-actions">
+      <button class="search-btn" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+</header>

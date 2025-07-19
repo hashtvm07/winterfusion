@@ -1,0 +1,58 @@
+<div class="label-container">
+    <div class="card header-card">
+      <div class="pin"></div>
+      <h1 class="product-name">{{ productName }}</h1>
+      <p class="subtitle">ICE FOR HUMAN CONSUMPTION</p>
+      <p class="tagline">{{ tagline }}</p>
+    </div>
+  
+    <div class="card manufacturer-card random-position">
+      <div class="pin"></div>
+      <h2>Manufactured & Packed By:</h2>
+      <p>{{ manufacturer }}<br>
+      {{ address }}<br>
+      e-mail: {{ email }}<br>
+      {{ website }}</p>
+      <p class="license">Lic. No. {{ licenseNo }}</p>
+    </div>
+  
+    <div class="card product-details-card random-position">
+      <div class="pin"></div>
+      <p><strong>Net Wt. (When Packed):</strong> {{ weight }}</p>
+      <p class="best-before">BEST BEFORE 6 MONTHS FROM PACKING</p>
+      <p class="warning">DO NOT BUY IF THE PACKAGE IS TAMPERED OR OPEN</p>
+      <p class="origin">PRODUCT OF INDIA</p>
+    </div>
+  
+    <div class="card ingredients-card random-position">
+      <div class="pin"></div>
+      <h2>Ingredients:</h2>
+      <p>{{ ingredients }}</p>
+    </div>
+  
+    <div class="card nutrition-card random-position">
+      <div class="pin"></div>
+      <h2>Nutrition Facts</h2>
+      <table>
+        <tr *ngFor="let fact of nutritionFacts">
+          <td>{{ fact.label }}</td>
+          <td>{{ fact.value }}</td>
+        </tr>
+      </table>
+    </div>
+  
+    <div class="card customer-care-card random-position">
+      <div class="pin"></div>
+      <h2>For Comments/ Feedback/ Complaints</h2>
+      <p>Write to customer care at the above address/ email or call<br>
+      Customer Care No: {{ customerCareNo }}</p>
+    </div>
+  
+    <div class="card usage-card random-position">
+      <div class="pin"></div>
+      <h2>How to use</h2>
+      <ul>
+        <li *ngFor="let instruction of usageInstructions">{{ instruction }}</li>
+      </ul>
+    </div>
+  </div>
