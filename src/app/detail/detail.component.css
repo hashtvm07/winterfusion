@@ -1,0 +1,177 @@
+:root {
+    --color-base: #284a78;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .label-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    width: 300px;
+    padding: 2rem 1.5rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    overflow: visible;
+    border-radius: 2px;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 20 !important;
+  }
+  
+  .random-position {
+    transform: rotate(var(--rotation));
+  }
+  
+  .pin {
+    width: 2px;
+    height: 25px;
+    background-color: #284a78;
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    transform: rotate(30deg);
+    transform-origin: top center;
+    z-index: 1;
+  }
+  
+  .pin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: -1px;
+    bottom: -4px;
+    background-color: rgba(40, 74, 120, 0.3);
+    filter: blur(2px);
+    z-index: -1;
+  }
+  
+  .pin::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #284a78;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-card {
+    width: 80%;
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    text-align: center;
+    background-color: #e6eef7;
+    color: var(--color-base);
+    padding: 3rem 2rem;
+    z-index: 10;
+  }
+  
+  .product-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-base);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-base);
+    margin-top: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-base);
+  }
+  
+  .license, .best-before, .warning, .origin {
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+  
+  .warning {
+    color: #d32f2f;
+  }
+  
+  .nutrition-card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .nutrition-card td {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(40, 74, 120, 0.2);
+  }
+  
+  .nutrition-card td:first-child {
+    font-weight: 600;
+  }
+  
+  .usage-card ul {
+    padding-left: 1.5rem;
+  }
+  
+  .usage-card li {
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Overlapping positioning with z-index */
+  .manufacturer-card { top: 20%; left: 5%; --rotation: -3deg; background-color: #f0e6e6; z-index: 2; }
+  .product-details-card { top: 35%; left: 65%; --rotation: 2deg; background-color: #e6f0e6; z-index: 3; }
+  .ingredients-card { top: 55%; left: 20%; --rotation: -2deg; background-color: #e6e6f0; z-index: 4; }
+  .nutrition-card { top: 30%; left: 35%; --rotation: 1deg; background-color: #f0f0e6; z-index: 5; }
+  .customer-care-card { top: 65%; left: 55%; --rotation: -1deg; background-color: #e6f0f0; z-index: 6; }
+  .usage-card { top: 45%; left: 2%; --rotation: 3deg; background-color: #f0e6f0; z-index: 7; }
+  
+  @media (max-width: 1200px) {
+    .label-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+      margin: 1rem 0;
+      transform: none !important;
+    }
+  
+    .header-card {
+      width: 100%;
+      max-width: none;
+      transform: none;
+    }
+  }

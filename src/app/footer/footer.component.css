@@ -1,0 +1,89 @@
+/* footer.component.css */
+.main-footer {
+    background-color: #284a78;
+    color: #ffffff;
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-upper {
+    padding-bottom: 30px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  
+  .footer-logo {
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .company-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  
+    .footer-column {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+  }
